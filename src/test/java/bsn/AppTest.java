@@ -2,19 +2,26 @@ package bsn;
 
 import static org.junit.Assert.assertTrue;
 
+import junit.framework.TestCase;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTest extends TestCase
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
+    public void test1()
     {
-        assertTrue( false );
+       //Selenium Test;
+        // After selenium 3.0 we can not execute directly, its necessary l epath
+        System.setProperty("webdriver.gecko.driver", "C:\\Java\\geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://softpost.org");
+        driver.close();
+        driver.quit();
+
     }
 }

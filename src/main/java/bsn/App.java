@@ -1,7 +1,6 @@
 package bsn;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -42,8 +41,8 @@ public class App
 
             // open browser - WebDriver
             WebDriver driver = new FirefoxDriver();
-            driver.get(prop.getProperty("driverBrowser"));
-            driver.findElement(By.xpath("//*[@id=\"usuario\"]")).sendKeys("testInput");
+            driver.get("http://uol.com.br");
+            //driver.findElement(By.xpath("//*[@id=\"usuario\"]")).sendKeys("testInput");
             driver.manage().window().fullscreen();
 
             // captude d'ecran
@@ -52,7 +51,7 @@ public class App
             // takes screenShot and put em memory (buffer)
             File source = ts.getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(source, new File("./Screenshots/images.png"));
-            System.out.println("Screenshot taken");
+            System.out.println("Screenshot takennnnn");
 
             // Close and quit driver
             driver.close();

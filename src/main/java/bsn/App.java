@@ -1,9 +1,7 @@
 package bsn;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.FileInputStream;
@@ -42,7 +40,11 @@ public class App
             // open browser - WebDriver
             WebDriver driver = new FirefoxDriver();
             driver.get("http://uol.com.br");
-            //driver.findElement(By.xpath("//*[@id=\"usuario\"]")).sendKeys("testInput");
+            WebElement webElement = driver.findElement(By.xpath("//*[@id=\"usuario\"]"));
+            System.out.println("webElement getText=" + webElement.getLocation().x);
+            webElement.sendKeys("testOK");
+            //driver.findElement(By.xpath("//*[@id=\"usuario\"]"))
+            // .sendKeys("testInput");
             driver.manage().window().fullscreen();
 
             // captude d'ecran
